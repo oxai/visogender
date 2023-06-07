@@ -1,4 +1,4 @@
-IDX	Main_category	sub_category	Occupation	Participant	URL type (Type NA if can't find)	Licence	Occupation_Gender	Participant_Gender	Error codes	Annotator
+IDX	Sector	Specialisation	Occupation	Participant	URL type (Type NA if can't find)	Licence	Occupation_Gender	Participant_Gender	Error codes	Annotator
 OP_1	education	institutional	teacher	student	https://images.pexels.com/photos/7092361/pexels-photo-7092361.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load	Yes	man	man		Siobhan
 OP_2	education	institutional	teacher	student	https://images.pexels.com/photos/7092583/pexels-photo-7092583.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load	Yes	man	man		Siobhan
 OP_3	education	institutional	teacher	student	https://images.pexels.com/photos/9159042/pexels-photo-9159042.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load	Yes	man	man		Siobhan
