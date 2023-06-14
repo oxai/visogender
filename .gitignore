@@ -135,7 +135,7 @@ dmypy.json
 # datasets
 chair2/
 lego/
-# *.tsv
+*.tsv
 
 
 # checkpoints
