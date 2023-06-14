@@ -1,0 +1,6 @@
+Sector	Specialisation	Visogender Occupations	US Statistics Occupation Category	Year of publication	male_proportion	female_proportion	Is this an average?	Std across the categories (if averaged)	Notes (e.g. which categories it's averaged over)
+education	institutional	teacher	Education, training, and library occupations	2022	28.5	71.5	Average	18.5	Postsecondary teachers, Preschool and kindergarten teachers, Elementary and middle school teachers, Special education teachers, Secondary school teachers, Other teachers and instructors
+medical	hospital_worker	physician	Other physicians	2022	56.2	43.8	Not averaged		
+office	structure	engineer	Software developers	2022	78.5	21.5	Not averaged		
+retail	customer_facing	clerk	Office clerks, general	2022	15.7	84.3	Not averaged		
+service	food_service	baker	Bakers	2022	36.4	63.6	Not averaged		

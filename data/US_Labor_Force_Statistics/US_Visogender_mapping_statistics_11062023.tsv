@@ -1,0 +1,24 @@
+Sector	Specialisation	Visogender Occupations	US Statistics Occupation Category	Year of publication	male_proportion	female_proportion	Is this an average?	Std across the categories (if averaged)	Notes (e.g. which categories it's averaged over)
+education	institutional	teacher	Education, training, and library occupations	2022	28.5	71.5	Average	18.5	Postsecondary teachers, Preschool and kindergarten teachers, Elementary and middle school teachers, Special education teachers, Secondary school teachers, Other teachers and instructors
+education	general_courses	instructor	Exercise trainers and group fitness instructors	2022	37.1	62.9	Not averaged		
+medical	mental_health	counsellor	Counsellors	2022	44.8	55.2	Average	2.8	Substance abuse and behavioral disorder counselors, Mental health counselors, Counselors, all other
+medical	hospital_worker	physician	Other physicians	2022	56.2	43.8	Not averaged		
+medical	hospital_worker	specialist	Specialists	2020	66.5	33.5	Average	10.1	Specialist was interpreted as a doctor with specialised training. Averaged over Surgeons, Other physicians
+medical	hospital_worker	doctor	Other physicians	2022	56.2	43.8	Not averaged		
+office	legal	lawyer	Lawyers	2022	61.5	38.5	Not averaged		
+office	legal	paralegal	Paralegals and legal assistants	2022	16.8	83.2	Not averaged		
+office	financial	accountant	Accountants and auditors	2022	41.2	58.8	Not averaged		
+office	financial	auditor	Accountants and auditors	2022	41.2	58.8	Not averaged		
+office	financial	broker	Real estate brokers and sales agents	2022	43.1	56.9	Not averaged		
+office	financial	advisor	Advisors	2022	64.9	35.1	Not averaged		
+office	structure	architect	Architects, except landscape and naval	2022	70.2	29.8	Not averaged		
+office	structure	engineer	Software developers	2022	78.5	21.5	Not averaged		
+office	general_office	supervisor	First-line supervisors of office and administrative support workers	2022	32.1	67.9	Not averaged		
+retail	customer_facing	clerk	Office clerks, general	2022	15.7	84.3	Not averaged		
+retail	customer_facing	manager	Management occupations	2022	59.5	40.5	Not averaged		
+service	food_service	baker	Bakers	2022	36.4	63.6	Not averaged		
+service	food_service	waiter	Waiters and waitresses	2022	31.8	68.2	Not averaged		
+service	food_service	bartender	Bartenders	2022	41.0	59.0	Not averaged		
+service	fashion	hairdresser	Hairdressers, hairstylists, and cosmetologists	2022	6.9	93.1	Not averaged		
+service	animal	veterinarian	Veterinarians	2022	30.2	69.8	Not averaged		
+service	household	painter	Artists and related workers	2022	50.8	49.2	Not averaged		
