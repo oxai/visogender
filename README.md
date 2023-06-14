@@ -1,7 +1,153 @@
-# VisoGender: A dataset for benchmarking gender bias in image-text pronoun resolution
+# VISOGENDER: A dataset for benchmarking gender bias in image-text pronoun resolution
 
-## Data
+Authors: [Siobhan Mackenzie Hall](https://github.com/smhall97), [Fernanda Gonçalves Abrantes](https://github.com/abrantesfg), [Hanwen Zhu](https://github.com/hanwenzhu), [Grace Sodunke](https://github.com/grace-sodunke), [Aleksandar Shtedritski](https://github.com/suny-sht) and [Hannah Rose Kirk](https://github.com/HannahKirk)
 
-The data is located in `data` - `Visogender_Occupation_Participant_DATA.tsv` contains the occupation-participant data (two people), and `Visogender_Occupational_Object_DATA.tsv`contains the occupation-object data (single person). Images can be accessed via the URLs in the spreadsheet. 
+![Visogender splash figure](/visogender_splash.jpeg)
+**VISOGENDER** is a benchmark dataset used to assess gender pronoun resolution bias in the domain of occupation for vision-language models. **VISOGENDER** is designed to support two types of VLMs (CLIP-like and Captioning) in evaluating bias in resolution and retrieval tasks.
 
-Code for using the data coming soon!
+## The Dataset
+The **VISOGENDER** dataset comprises image URLs with annotations for the occupation noun, the participant or object noun, and the inferred groundtruth gender of the occupation and participant. These annotations can be used to reconstruct the templated captions. Data collection was carried out by the authors of the paper from March to May 2023 on a variety of image databases and search providers, such as Pexels and Google Image Search.
+
+The data is available here: `data/visogender_data` and is in a .tsv format.
+
+There are two sets of images:
+
+- Single person: 
+  - 230 images, divided into 23 occupations 
+  - [Link to dataset](data/visogender_data/OO/OO_Visogender_11062023.tsv)
+- Two-persons: 
+  - 460 images, divided into 23 occupations. Same pairs: M-M ; W-W | Diff. pairs: M-W ; W-M
+  - [Link to dataset](data/visogender_data/OP/OP_Visogender_11062023.tsv)
+
+The dataset is made up of the following metadata headings: Sector, Specialisation and Occupation tags; URL; confirmation of licence; labels assigned to `occupation` as well as the `object` (single person) or the `participant` (two-person). The person responsible for collecting each instance is also indicated.
+
+*Date collected:* this data was collected between March and May 2023. 
+
+*Data collection:* The data was collected trhough a variety of image databases and search providers, such as Pexels and Google Image Search
+
+## The VISOGENDER setup
+
+The **VISOGENDER** setup has the flexibility to measure VLM (CLIP-like and Captioning models) bias in two ways:
+
+1. *Resolution bias*: The resolution task considers a single image with groundtruth gender label and matches it to multiple candidate captions containing different gender pronouns. For example, we start with an image containing a female doctor, and specify the set of candidate captions as “the doctor and her/his patient. We define a resolution accuracy and gender gap score in the paper.
+
+2. *Retrieval bias*:  The retrieval task considers a single gender neutral caption for a given occupation and matches it to multiple images containing different gender subjects from the same occupation. For example, we start with the caption “the doctor and their patient” and define the set of candidate images as containing 50% images of doctors who are men and 50% who are women. Given there is no groundtruth for a “correct” ranking of images for a gender-neutral caption, we cannot define a retrieval accuracy metric. For defining retrieval bias, we use 3 commonly used metrics – Bias@K, Skew@K and NDKL (see the paper for details)
+
+The code base is set up to run the benchmark, finegrained analysis and the comparison to the US Labor Force Statistics. Details to run these analysis are given below
+
+=======
+
+To run this data, make sure you have python3 installed. 
+You can install dependencies using: 
+
+```sh
+pip install -r requirements.txt
+```
+=========
+## The VISOGENDER Benchmark
+There following code can be run to return the benchmark scores for resolution and retrieval bias.
+
+### Computing raw results
+#### Resolution bias
+For CLIP-like models:
+```sh
+python3 resolution_bias/run_cliplike.py 
+```
+For captioning models:
+```sh
+python3 resolution_bias/run_captioning .py 
+```
+This runs for the models set up, and saves the raw results to `\results\model_outputs\` in a raw output JSON `<model-output>.json`. Results for both occupation-participant (OP) and occupation-object (OO) are saved.
+
+#### Retrieval bias
+
+```sh
+python3 retrieval_bias/run_retrieval_bias.py 
+```
+This runs for the models set up, and saves the raw results to `\results\model_outputs\` in a raw output JSON `<model-output>.json`. Results for both occupation-participant (OP) and occupation-object (OO) are saved.
+
+### Computing bias measures
+To get benchmark scores, please run both `return_benchmark.py` files for resolution and retrieval bias:
+
+Resolution bias:
+```sh
+python3 analysis/resolution_bias/return_benchmark.py 
+```
+Retrieval bias:
+```sh
+python3 analysis/retrieval_bias/return_benchmark.py 
+```
+This runs the benchmark analsysis and outputs to `\results\benchmark_scores\` in a raw output JSON `<benchmark>.json` for both resolution and retrieval bias.
+
+
+#### What does a good result look like?
+
+To perform well on **VISOGENDER**, the scores should be optimised as follows:
+
+Resolution accuracy: this should be as close to 1.0 (100%) as possible which indicates a high capability in performing gender coreference resolution 
+Gender Gap: this should be as close to 0 as possible (i.e. the model performs equally well for both genders, and isn't biased towards either gender)
+Retrieval metrics: these should be as close to 0 as possible (i.e. genders in retrieval results are balanced to demonstrate a model is not biased towards either gender)
+
+## Adding your own models
+**VISOGENDER** supports two types of VLMs: CLIP-like models and Captioning models. You can evaluate your own models as follows:
+- Add model set up to `src/cliplike_set_up.py` or `src/captioning_set_up.py`. You should provide a model and a processor object. 
+- Pair each model with a string identifier and add this as a string to:
+  - Resolution bias: 
+  `resolution_bias/cliplike_run/cliplike_input_params.py`
+  `resolution_bias/captioning_run/captioning_input_params.py`
+  - Retrieval bias:
+  `retrieval_bias/cliplike_input_params.py`
+- For models with different implementation details to CLIP / BLIP, some custom changes might be needed: 
+  - For CLIP-like models, the bechmark relies on similarity scores between an image and several text prompts. An example implemnetation of that is provided in  `src\clip_set_up\clip_model` that returns a list `[s1, s2, s3]` with similarities for each caption. If the implementation of your model and the computation of similarity scores differs significantly, a similar function will need to be implemented. 
+  - For captioning models, the benchmark relies on the logits for the pronouns for "his" and "her" during next token prediction. An example implementation of this is provided in `src\captioning_set_up\blip_get_probabilities_his_her_their`. Due to the differences in implementatuion details, a similar function needs to be implmeneted for different captioning models. 
+
+## Additional Analysis
+
+The data can be used once loaded into a dictionary. The dictionary can be looped over to access each individual instance, and its metadata as needed. There are two sets of data:single person and two-person. The following script shows an example of how these can be loaded into dictionaries using tailored functions:
+```
+cd data\dataloader.py
+```
+### Resolution Bias Analysis
+This analysis returns a dataframe with basic analysis. This analysis adds two columns to the dataframe with boolean values to indicate the following:
+1. If the model's hightest probabilty matches the ground truth
+2. If the model's highest probability returns the neutral pronoun
+
+```sh
+python3 analysis/resolution_bias/run_preliminary_analysis.py 
+```
+converts the raw output into analysis stats `<output-analysis>.json` for subsequent scripts and is saved in `results/resolution_bias_analysis/preliminary_analysis`:
+
+
+### Retrieval Bias Analysis
+
+#### Analysis script
+```sh
+python3 retrieval_analysis.py <model-output>.json <output-analysis>.json
+```
+converts the raw output into analysis stats `<output-analysis>.json` for subsequent scripts:
+
+#### Summary stats
+```sh
+python3 summary_stats.py <output-analysis>.json
+```
+prints the headline statistics from the analysis (Bias@5, Bias@10, MaxSkew@5, MaxSkew@10, NDKL).
+
+## Running the comparison to US Labor Force Statistics
+
+We share the mapping we used to compare the resolution and retrieval bias scores with the US Labor Force Statistics. The data can be accessed in the follow file:
+
+### Accessing the data:
+```
+cd data\US_Labor_Force_Statistics\US_Visogender_mapping_statistics_11062023.tsv
+```
+
+# Licence
+The **VISOGENDER** dataset only contains URLs that reference images that (at the time of curation) are under Creative Commons and/or royalty free licences that allow for their use and distribution. No images are stored directly. The dataset is accompanied by a Datasheet which is available in the paper. 
+
+The URLs are curated manually, and at the time of collection in April - May 2023, they did not point to any images containing harmful or disturbing imagery, nor any images containing children. 
+
+The associated metadata is provided by manual labelling, and is based on Google and Pexels image search query tags. 
+
+The authors confirm that, to the best of their knowledge, they are using all intellectual property in accordance with their licences, and the use of the data does not violate any rights. The authors do not take responsibility for any licences that change with time.
+
+This dataset will be maintained by the authors. If you would like to contribute to the dataset, please contact the authors. In the event that there are any issues with the dataset, or any specific links to images, or associated images, please contact the authors and offending information will be removed immediately. 
