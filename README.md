@@ -10,7 +10,7 @@ The **VISOGENDER** dataset comprises image URLs with annotations for the occupat
 
 The data is available here: `data/visogender_data` and is in a .tsv format.
 
-There are two sets of images:
+There are two sets of image datasets:
 
 - Single person: 
   - 230 images, divided into 23 occupations 
