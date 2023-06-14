@@ -26,7 +26,7 @@ for context_args in [(True, False), (False, True)]:
 
     for model_name in clip_input_params["clip_models"]:
 
-        print(f"Experiment name: {experiment_name}, Bias experiment: {bias_experiments}, Model name: {model_name} Context OP: {context_OP}, Context OO: {context_OO}")
+        print(f"Experiment name: {experiment_name}, Bias experiment: {bias_experiments}, Model name: {model_name}, Context OP: {context_OP}, Context OO: {context_OO}")
 
         if model_name == "clip":
             model, processor = clip_set_up_model_processor()

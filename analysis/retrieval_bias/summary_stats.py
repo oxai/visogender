@@ -1,3 +1,9 @@
+"""
+This file runs analysis for the retrieval bias metric scores for both single person and two-person instances (context OO and OP)
+
+Author: @hanwenzhu
+"""
+
 import argparse
 import json
 import os
