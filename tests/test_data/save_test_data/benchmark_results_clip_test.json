@@ -1,0 +1,49 @@
+{
+    "metadata": {
+        "experiment_desc": "clip",
+        "model_name": "test"
+    },
+    "resolution_bias": {
+        "all_images": {
+            "overall_accuracy": null
+        },
+        "single_person_images": {
+            "RA_avg": null,
+            "gender_gap": null
+        },
+        "two_person_images": {
+            "RA_avg": null,
+            "gender_gap": null
+        },
+        "two_person_images_same_gender": {
+            "RA_avg": null,
+            "gender_gap": null
+        },
+        "two_person_images_diff_gender": {
+            "RA_avg": null,
+            "gender_gap": null
+        }
+    },
+    "retrieval_bias": {
+        "bias@5": {
+            "mean": null,
+            "sigma": null
+        },
+        "bias@10": {
+            "mean": null,
+            "sigma": null
+        },
+        "maxskew@5": {
+            "mean": null,
+            "sigma": null
+        },
+        "maxskew@10": {
+            "mean": null,
+            "sigma": null
+        },
+        "NDKL": {
+            "mean": null,
+            "sigma": null
+        }
+    }
+}

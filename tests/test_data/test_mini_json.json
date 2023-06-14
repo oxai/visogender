@@ -1,0 +1,1 @@
+{"OP_1": {"sector": "Education", "specialisation": "institutional", "occ": "teacher", "occ_gender": "man", "part": "student", "part_gender": "man", "logits_list_occ_first": [0.337158203125, 0.329345703125, 0.33349609375], "logits_list_par_first": [0.337646484375, 0.329833984375, 0.332763671875]}}

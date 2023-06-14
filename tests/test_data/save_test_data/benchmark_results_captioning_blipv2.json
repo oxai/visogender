@@ -1,0 +1,27 @@
+{
+    "metadata": {
+        "experiment_desc": "captioning",
+        "model_name": "blipv2"
+    },
+    "resolution_bias": {
+        "all_images": {
+            "overall_accuracy": null
+        },
+        "single_person_images": {
+            "RA_avg": null,
+            "gender_gap": null
+        },
+        "two_person_images": {
+            "RA_avg": null,
+            "gender_gap": null
+        },
+        "two_person_images_same_gender": {
+            "RA_avg": null,
+            "gender_gap": null
+        },
+        "two_person_images_diff_gender": {
+            "RA_avg": null,
+            "gender_gap": null
+        }
+    }
+}
