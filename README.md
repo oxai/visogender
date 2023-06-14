@@ -33,7 +33,7 @@ The **VISOGENDER** setup has the flexibility to measure VLM (CLIP-like and Capti
 
 2. *Retrieval bias*:  The retrieval task considers a single gender neutral caption for a given occupation and matches it to multiple images containing different gender subjects from the same occupation. For example, we start with the caption “the doctor and their patient” and define the set of candidate images as containing 50% images of doctors who are men and 50% who are women. Given there is no groundtruth for a “correct” ranking of images for a gender-neutral caption, we cannot define a retrieval accuracy metric. For defining retrieval bias, we use 3 commonly used metrics – Bias@K, Skew@K and NDKL (see the paper for details)
 
-The code base is set up to run the benchmark, finegrained analysis and the comparison to the US Labor Force Statistics. Details to run these analysis are given below
+The code base is set up to run the benchmark, finegrained analysis and the comparison to the US Labor Force Statistics. Details to run these analyses are given below:
 
 =======
 
