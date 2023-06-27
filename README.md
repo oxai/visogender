@@ -5,6 +5,9 @@ Authors: [Siobhan Mackenzie Hall](https://github.com/smhall97), [Fernanda Gonça
 ![Visogender splash figure](/visogender_splash.jpeg)
 **VISOGENDER** is a benchmark dataset used to assess gender pronoun resolution bias in the domain of occupation for vision-language models. **VISOGENDER** is designed to support two types of VLMs (CLIP-like and Captioning) in evaluating bias in resolution and retrieval tasks.
 
+## Paper
+Our paper can be found in the [link here](https://arxiv.org/abs/2306.12424).
+
 ## The Dataset
 The **VISOGENDER** dataset comprises image URLs with annotations for the occupation noun, the participant or object noun, and the inferred groundtruth gender of the occupation and participant. These annotations can be used to reconstruct the templated captions. Data collection was carried out by the authors of the paper from March to May 2023 on a variety of image databases and search providers, such as Pexels and Google Image Search.
 
@@ -57,14 +60,14 @@ For captioning models:
 ```sh
 python3 resolution_bias/run_captioning .py 
 ```
-This runs for the models set up, and saves the raw results to `\results\model_outputs\` in a raw output JSON `<model-output>.json`. Results for both occupation-participant (OP) and occupation-object (OO) are saved.
+This runs for the models set up, and saves the raw results to `/results/model_outputs/` in a raw output JSON `<model-output>.json`. Results for both occupation-participant (OP) and occupation-object (OO) are saved.
 
 #### Retrieval bias
 
 ```sh
 python3 retrieval_bias/run_retrieval_bias.py 
 ```
-This runs for the models set up, and saves the raw results to `\results\model_outputs\` in a raw output JSON `<model-output>.json`. Results for both occupation-participant (OP) and occupation-object (OO) are saved.
+This runs for the models set up, and saves the raw results to `/results/model_outputs/` in a raw output JSON `<model-output>.json`. Results for both occupation-participant (OP) and occupation-object (OO) are saved.
 
 ### Computing bias measures
 To get benchmark scores, please run both `return_benchmark.py` files for resolution and retrieval bias:
@@ -77,7 +80,7 @@ Retrieval bias:
 ```sh
 python3 analysis/retrieval_bias/return_benchmark.py 
 ```
-This runs the benchmark analsysis and outputs to `\results\benchmark_scores\` in a raw output JSON `<benchmark>.json` for both resolution and retrieval bias.
+This runs the benchmark analsysis and outputs to `/results/benchmark_scores/` in a raw output JSON `<benchmark>.json` for both resolution and retrieval bias.
 
 
 #### What does a good result look like?
@@ -98,14 +101,14 @@ Retrieval metrics: these should be as close to 0 as possible (i.e. genders in re
   - Retrieval bias:
   `retrieval_bias/cliplike_input_params.py`
 - For models with different implementation details to CLIP / BLIP, some custom changes might be needed: 
-  - For CLIP-like models, the bechmark relies on similarity scores between an image and several text prompts. An example implemnetation of that is provided in  `src\clip_set_up\clip_model` that returns a list `[s1, s2, s3]` with similarities for each caption. If the implementation of your model and the computation of similarity scores differs significantly, a similar function will need to be implemented. 
-  - For captioning models, the benchmark relies on the logits for the pronouns for "his" and "her" during next token prediction. An example implementation of this is provided in `src\captioning_set_up\blip_get_probabilities_his_her_their`. Due to the differences in implementatuion details, a similar function needs to be implmeneted for different captioning models. 
+  - For CLIP-like models, the bechmark relies on similarity scores between an image and several text prompts. An example implemnetation of that is provided in  `src/clip_set_up/clip_model` that returns a list `[s1, s2, s3]` with similarities for each caption. If the implementation of your model and the computation of similarity scores differs significantly, a similar function will need to be implemented. 
+  - For captioning models, the benchmark relies on the logits for the pronouns for "his" and "her" during next token prediction. An example implementation of this is provided in `src/captioning_set_up/blip_get_probabilities_his_her_their`. Due to the differences in implementatuion details, a similar function needs to be implmeneted for different captioning models. 
 
 ## Additional Analysis
 
 The data can be used once loaded into a dictionary. The dictionary can be looped over to access each individual instance, and its metadata as needed. There are two sets of data:single person and two-person. The following script shows an example of how these can be loaded into dictionaries using tailored functions:
 ```
-cd data\dataloader.py
+cd data/dataloader.py
 ```
 ### Resolution Bias Analysis
 This analysis returns a dataframe with basic analysis. This analysis adds two columns to the dataframe with boolean values to indicate the following:
@@ -138,7 +141,7 @@ We share the mapping we used to compare the resolution and retrieval bias scores
 
 ### Accessing the data:
 ```
-cd data\US_Labor_Force_Statistics\US_Visogender_mapping_statistics_11062023.tsv
+cd data/US_Labor_Force_Statistics/US_Visogender_mapping_statistics_11062023.tsv
 ```
 
 # Licence
@@ -151,3 +154,16 @@ The associated metadata is provided by manual labelling, and is based on Google 
 The authors confirm that, to the best of their knowledge, they are using all intellectual property in accordance with their licences, and the use of the data does not violate any rights. The authors do not take responsibility for any licences that change with time.
 
 This dataset will be maintained by the authors. If you would like to contribute to the dataset, please contact the authors. In the event that there are any issues with the dataset, or any specific links to images, or associated images, please contact the authors and offending information will be removed immediately. 
+
+## Citation
+
+```
+@misc{hall2023visogender,
+      title={VisoGender: A dataset for benchmarking gender bias in image-text pronoun resolution}, 
+      author={Siobhan Mackenzie Hall and Fernanda Gonçalves Abrantes and Hanwen Zhu and Grace Sodunke and Aleksandar Shtedritski and Hannah Rose Kirk},
+      year={2023},
+      eprint={2306.12424},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}
+```
