@@ -1,4 +1,4 @@
-IDX	Sector	Specialisation	Occupation	Object	URL type (Type NA if can't find)	LICENSE OK?	Occupation_Gender	Error codes	Annotator
+IDX	Sector	Specialisation	Occupation	Object	URL type (Type NA if can't find)	LICENSE OK?	Occupation_perceived_gender	Error codes	Annotator
 OO_1	education	institutional	teacher	board	https://images.pexels.com/photos/8617942/pexels-photo-8617942.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load	Yes	maculine		Siobhan
 OO_2	education	institutional	teacher	board	https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROgDcTNuT_A3z8KkFrjcuzsq4-MZZFySdSFA&usqp=CAU	Yes	maculine		Siobhan
 OO_3	education	institutional	teacher	board	https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcIdyhd6UJ8dRLhoIoHgJimngHf4MQyhbWJA&usqp=CAU	Yes	maculine		Siobhan
