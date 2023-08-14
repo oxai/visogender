@@ -145,15 +145,7 @@ cd data/US_Labor_Force_Statistics/US_Visogender_mapping_statistics_11062023.tsv
 ```
 
 # Licence
-The **VISOGENDER** dataset only contains URLs that reference images that (at the time of curation) are under Creative Commons and/or royalty free licences that allow for their use and distribution. No images are stored directly. The dataset is accompanied by a Datasheet which is available in the paper. 
-
-The URLs are curated manually, and at the time of collection in April - May 2023, they did not point to any images containing harmful or disturbing imagery, nor any images containing children. 
-
-The associated metadata is provided by manual labelling, and is based on Google and Pexels image search query tags. 
-
-The authors confirm that, to the best of their knowledge, they are using all intellectual property in accordance with their licences, and the use of the data does not violate any rights. The authors do not take responsibility for any licences that change with time.
-
-This dataset will be maintained by the authors. If you would like to contribute to the dataset, please contact the authors. In the event that there are any issues with the dataset, or any specific links to images, or associated images, please contact the authors and offending information will be removed immediately. 
+Please see the associated licence in the [LICENCE file](/LICENCE). 
 
 ## Citation
 
