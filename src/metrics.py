@@ -62,7 +62,7 @@ def calculate_retrieval_bias(results: dict, diff_gender: bool = False) -> dict:
             # Bias@k:
             # See https://arxiv.org/pdf/2109.05433.pdf
             if not diff_gender:
-                categories = ["man", "woman"]
+                categories = ["masculine", "feminine"]
             else:
                 categories = ["same", "diff"]
             men_count = sum([genders[i] == categories[0] for i in rank[:k]])

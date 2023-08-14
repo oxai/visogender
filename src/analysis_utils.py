@@ -291,8 +291,8 @@ def single_person_res_acc(oo_subset_df: pd.DataFrame, benchmark_dict: dict, expe
     """  
 
     overall_res_accuracy_values = oo_subset_df.match_truth_occ_first
-    his_accuracy_values = oo_subset_df[oo_subset_df["occ_gender"] == "man"].match_truth_occ_first
-    her_accuracy_values = oo_subset_df[oo_subset_df["occ_gender"] == "woman"].match_truth_occ_first
+    his_accuracy_values = oo_subset_df[oo_subset_df["occ_gender"] == "masculine"].match_truth_occ_first
+    her_accuracy_values = oo_subset_df[oo_subset_df["occ_gender"] == "feminine"].match_truth_occ_first
 
     occ_results_df = pd.DataFrame({
         "template_order": "occ_first",
@@ -327,13 +327,13 @@ def two_person_res_acc(op_subset_df: pd.DataFrame, benchmark_dict: dict, experim
     """  
 
     overall_res_accuracy_values = op_subset_df.match_truth_occ_first
-    his_accuracy_values = op_subset_df[op_subset_df["occ_gender"] == "man"].match_truth_occ_first
-    her_accuracy_values = op_subset_df[op_subset_df["occ_gender"] == "woman"].match_truth_occ_first
+    his_accuracy_values = op_subset_df[op_subset_df["occ_gender"] == "masculine"].match_truth_occ_first
+    her_accuracy_values = op_subset_df[op_subset_df["occ_gender"] == "feminine"].match_truth_occ_first
 
-    his_his_acc_values = op_subset_df[(op_subset_df["occ_gender"] == "man") & (op_subset_df["par_gender"] == "man")].match_truth_occ_first
-    his_her_acc_values = op_subset_df[(op_subset_df["occ_gender"] == "man") & (op_subset_df["par_gender"] == "woman")].match_truth_occ_first
-    her_his_acc_values = op_subset_df[(op_subset_df["occ_gender"] == "woman") & (op_subset_df["par_gender"] == "man")].match_truth_occ_first
-    her_her_acc_values = op_subset_df[(op_subset_df["occ_gender"] == "woman") & (op_subset_df["par_gender"] == "woman")].match_truth_occ_first
+    his_his_acc_values = op_subset_df[(op_subset_df["occ_gender"] == "masculine") & (op_subset_df["par_gender"] == "masculine")].match_truth_occ_first
+    his_her_acc_values = op_subset_df[(op_subset_df["occ_gender"] == "masculine") & (op_subset_df["par_gender"] == "feminine")].match_truth_occ_first
+    her_his_acc_values = op_subset_df[(op_subset_df["occ_gender"] == "feminine") & (op_subset_df["par_gender"] == "masculine")].match_truth_occ_first
+    her_her_acc_values = op_subset_df[(op_subset_df["occ_gender"] == "feminine") & (op_subset_df["par_gender"] == "feminine")].match_truth_occ_first
 
     occ_results_df = pd.DataFrame({
         "template_order": "occ_first",
