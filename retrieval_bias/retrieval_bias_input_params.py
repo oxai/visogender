@@ -12,8 +12,8 @@ from src.definitions import gender_idx_dict
 retrieval_input_params = {
                             "experiment_name": "retrieval_bias",
                             "result_savepath": result_dir,
-                            "OP_data": os.path.join(data_dir, "OP/OP_Visogender_11062023.tsv"),
-                            "OO_data": os.path.join(data_dir, "OO/OO_Visogender_11062023.tsv"),
+                            "OP_data": os.path.join(data_dir, "OP/OP_Visogender_14082023.tsv"),
+                            "OO_data": os.path.join(data_dir, "OO/OO_Visogender_14082023.tsv"),
                             "bias_experiments": "retrieval",
                             "template_type": ["occ_first", "par_first"],
                             "sentence_template_OP_occ_first": "The $OCCUPATION and $POSS_PRONOUN $PARTICIPANT",
