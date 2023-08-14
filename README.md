@@ -28,6 +28,11 @@ The dataset is made up of the following metadata headings: Sector, Specialisatio
 
 *Data collection:* The data was collected trhough a variety of image databases and search providers, such as Pexels and Google Image Search
 
+### Opting out, removing images and/or adjusting labels
+We are continually looking to improve VISOGENDER. If for any reason you would like an image removed, or lables updated please complete this [Google Form](https://forms.gle/uD7tQfSa7jvzoqDU6) which automatically notifies the authors when an entry is submitted. Reasons for removing an image could include, but are not limited to that the link is broken, it is redirecting to inappropriate / inapplicable content and/or you have identified yourself in the image and would like it taken down. Reasons for updating the labels can include, but are not limited to, uou have identified an image of yourself, or someone you know and the assigned label is incorrect, and/or inappropriate, but the image can remain in the dataset.
+
+**[Link to Google Form](https://forms.gle/uD7tQfSa7jvzoqDU6)**
+
 ### Checking the data integrity
 
 If you would like to check that all URLs in the dataset are working, and/or check that there are no duplicates, please run the following code:
