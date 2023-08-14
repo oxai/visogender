@@ -19,7 +19,7 @@ There are two sets of image datasets:
   - 230 images, divided into 23 occupations 
   - [Link to dataset named OO_Visogender_14082023.tsv](data/visogender_data/OO/OO_Visogender_14082023.tsv) 
 - Two-persons: 
-  - 460 images, divided into 23 occupations. Same pairs: M-M ; W-W | Diff. pairs: M-W ; W-M
+  - 460 images, divided into 23 occupations. Same pairs: M-M ; F-F | Diff. pairs: M-F ; F-M
   - [Link to dataset named OP_Visogender_14082023.tsv](data/visogender_data/OP/OO_Visogender_14082023.tsv)
 
 The dataset is made up of the following metadata headings: Sector, Specialisation and Occupation tags; URL; confirmation of licence; labels assigned to `occupation` as well as the `object` (single person) or the `participant` (two-person). The person responsible for collecting each instance is also indicated.
@@ -27,6 +27,16 @@ The dataset is made up of the following metadata headings: Sector, Specialisatio
 *Date collected:* this data was collected between March and May 2023. 
 
 *Data collection:* The data was collected trhough a variety of image databases and search providers, such as Pexels and Google Image Search
+
+### Checking the data integrity
+
+If you would like to check that all URLs in the dataset are working, and/or check that there are no duplicates, please run the following code:
+
+```sh
+python3 data/visogender_url_integrity_check.py
+```
+
+For the full maintanance plan, please review the [LICENCE](/LICENCE)
 
 ## The VISOGENDER setup
 
