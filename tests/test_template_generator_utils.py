@@ -34,7 +34,7 @@ class TestTemplateGeneratorUtils(unittest.TestCase):
                                                 "w_all_res": 0,
                                                 "w_res_no": 0,
                                                 "all_res_no": 0},
-                        "gender_idx_dict" : {"man": 0, "woman": 1, "neutral": 2},
+                        "gender_idx_dict" : {"masculine": 0, "feminine": 1, "neutral": 2},
                         "caption_models": ["test_model_1", "test_model_2"]}
         self.op_template_key1 = {'OP_1': {'sector': 'education', 'specialisation': 'institutional', 'occ': 'teacher', 'part': 'student', 'url': 'https://images.pexel...&lazy=load', 'licence': True, 'occ_gender': 'man', 'part_gender': 'man', 'annotator': 'Siobhan'}}
         self.op_template_key_last = {'OP_660': {'sector': 'service', 'specialisation': 'animal', 'occ': 'veterinarian', 'part': 'client', 'url': 'https://marketingplatform.vivial.net/sites/default/files/styles/400x200/public/content_images/veterinarian-waynesboro-va-header.jpg', 'licence': True, 'occ_gender': 'woman', 'part_gender': 'woman', 'annotator': 'Fernanda'}}
@@ -73,11 +73,11 @@ class TestTemplateGeneratorUtils(unittest.TestCase):
         test_exp_name, test_bias_exp, test_gender_idx_dict = set_up_parameters(self.input_params_dict_cap_op)
         self.assertEqual(test_exp_name, self.input_params_dict_cap_op["experiment_name"])
         self.assertEqual(test_bias_exp, self.input_params_dict_cap_op["bias_experiments"])
-        self.assertEqual(test_gender_idx_dict["man"], 0)
-        self.assertEqual(test_gender_idx_dict["woman"], 1)
+        self.assertEqual(test_gender_idx_dict["masculine"], 0)
+        self.assertEqual(test_gender_idx_dict["feminine"], 1)
         self.assertEqual(test_gender_idx_dict["neutral"], 2)
-        self.assertNotEqual(test_gender_idx_dict["man"], 1)
-        self.assertNotEqual(test_gender_idx_dict["woman"], 0)
+        self.assertNotEqual(test_gender_idx_dict["masculine"], 1)
+        self.assertNotEqual(test_gender_idx_dict["feminine"], 0)
 
         for _, value in self.input_params_dict_cap_op["count_pronouns_dict"].items():
             self.assertEqual(value, 0)

@@ -22,10 +22,10 @@ class TestAnalysisUtils(unittest.TestCase):
         
         self.test_save_path = "tests/test_data/save_test_data"
 
-        self.metadata_op_result_dict = {"OP_1": {"sector": "education", "specialisation": "institutional", "occ": "teacher", "occ_gender": "man", "par": "student", "par_gender": "man", "logits_list_occ_first": {"his": 0.337158203125, "her": 0.329345703125, "their": 0.33349609375}, "logits_list_par_first": {"his": 0.337646484375, "her": 0.329833984375, "their": 0.332763671875}, "experiment": "CLIP", "model_name": "clip", "context": "context_OP"}}
-        self.metadata_oo_result_dict = {"OO_1": {"sector": "education", "specialisation": "institutional", "occ": "teacher", "occ_gender": "man", "obj": "board", "logits_list_obj": {"his": 0.3369140625, "her": 0.326904296875, "their": 0.336181640625}, "experiment": "CLIP", "model_name": "clip", "context": "context_OO"}}
-        self.his_ground_truth = "man"
-        self.her_ground_truth = "woman"
+        self.metadata_op_result_dict = {"OP_1": {"sector": "education", "specialisation": "institutional", "occ": "teacher", "occ_gender": "masculine", "par": "student", "par_gender": "masculine", "logits_list_occ_first": {"his": 0.337158203125, "her": 0.329345703125, "their": 0.33349609375}, "logits_list_par_first": {"his": 0.337646484375, "her": 0.329833984375, "their": 0.332763671875}, "experiment": "CLIP", "model_name": "clip", "context": "context_OP"}}
+        self.metadata_oo_result_dict = {"OO_1": {"sector": "education", "specialisation": "institutional", "occ": "teacher", "occ_gender": "masculine", "obj": "board", "logits_list_obj": {"his": 0.3369140625, "her": 0.326904296875, "their": 0.336181640625}, "experiment": "CLIP", "model_name": "clip", "context": "context_OO"}}
+        self.his_ground_truth = "masculine"
+        self.her_ground_truth = "feminine"
         self.their_ground_truth = "neutral"
                        
     def test_json_summary_loader(self):
