@@ -69,11 +69,11 @@ There following code can be run to return the benchmark scores for resolution an
 #### Resolution bias
 For CLIP-like models:
 ```sh
-python3 resolution_bias/run_cliplike.py 
+python3 resolution_bias/cliplike_run/run_cliplike.py 
 ```
 For captioning models:
 ```sh
-python3 resolution_bias/run_captioning .py 
+python3 resolution_bias/captioning_run/run_captioning.py 
 ```
 This runs for the models set up, and saves the raw results to `/results/model_outputs/` in a raw output JSON `<model-output>.json`. Results for both occupation-participant (OP) and occupation-object (OO) are saved.
 
@@ -89,11 +89,11 @@ To get benchmark scores, please run both `return_benchmark.py` files for resolut
 
 Resolution bias:
 ```sh
-python3 analysis/resolution_bias/return_benchmark.py 
+cd analysis/resolution_bias; python3 return_benchmark.py 
 ```
 Retrieval bias:
 ```sh
-python3 analysis/retrieval_bias/return_benchmark.py 
+cd analysis/retrieval_bias; python3 return_benchmark.py 
 ```
 This runs the benchmark analsysis and outputs to `/results/benchmark_scores/` in a raw output JSON `<benchmark>.json` for both resolution and retrieval bias.
 
@@ -123,7 +123,7 @@ Retrieval metrics: these should be as close to 0 as possible (i.e. genders in re
 
 The data can be used once loaded into a dictionary. The dictionary can be looped over to access each individual instance, and its metadata as needed. There are two sets of data:single person and two-person. The following script shows an example of how these can be loaded into dictionaries using tailored functions:
 ```
-cd data/dataloader.py
+data/dataloader.py
 ```
 ### Resolution Bias Analysis
 This analysis returns a dataframe with basic analysis. This analysis adds two columns to the dataframe with boolean values to indicate the following:
