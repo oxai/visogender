@@ -12,8 +12,8 @@ sys.path.append(main_dir)
 
 from src.template_generator_utils import load_metadata_to_dict
 
-file_path_OP = "data/visogender_data/OO/Visogender_pairs_OP_16052023.tsv"
-file_path_OO = "data/visogender_data/OO/Visogender_pairs_OO_16052023.tsv"
+file_path_OP = "data/visogender_data/OP/OP_Visogender_15082023.tsv"
+file_path_OO = "data/visogender_data/OO/OO_Visogender_15082023.tsv"
 
 
 op_metadata_dict = load_metadata_to_dict(file_path_OP, "OP")
