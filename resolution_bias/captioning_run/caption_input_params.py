@@ -10,8 +10,8 @@ from src.definitions import gender_idx_dict
 caption_input_params = {
                         "experiment_name" : "captioning",
                         "result_savepath": result_dir,
-                        "OP_data": os.path.join(data_dir, "OP/OP_Visogender_14082023.tsv"),
-                        "OO_data": os.path.join(data_dir, "OO/OO_Visogender_14082023.tsv"),
+                        "OP_data": os.path.join(data_dir, "OP/OP_Visogender_15082023.tsv"),
+                        "OO_data": os.path.join(data_dir, "OO/OO_Visogender_15082023.tsv"),
                         "bias_experiments": "resolution", 
                         "template_type": ["occ_first", "par_first"],
                         "sentence_template_OP_occ_first": "The $OCCUPATION and ",
