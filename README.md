@@ -3,7 +3,7 @@
 Authors: [Siobhan Mackenzie Hall](https://github.com/smhall97), [Fernanda Gonçalves Abrantes](https://github.com/abrantesfg), [Hanwen Zhu](https://github.com/hanwenzhu), [Grace Sodunke](https://github.com/grace-sodunke), [Aleksandar Shtedritski](https://github.com/suny-sht) and [Hannah Rose Kirk](https://github.com/HannahKirk)
 
 ![Visogender splash figure](/visogender_splash.jpeg)
-**VISOGENDER** is a benchmark dataset used to assess gender pronoun resolution bias in the domain of occupation for vision-language models. **VISOGENDER** is designed to support two types of VLMs (CLIP-like and Captioning) in evaluating bias in resolution and retrieval tasks.
+**VISOGENDER** is a benchmark dataset used to assess gender pronoun resolution bias in the domain of occupation for vision-language models. **VISOGENDER** is designed to support two types of VLMs (CLIP-like and Captioning) in evaluating bias in resolution and retrieval tasks. 
 
 ## Paper
 Our paper can be found in the [link here](https://arxiv.org/abs/2306.12424).
@@ -29,7 +29,7 @@ The dataset is made up of the following metadata headings: Sector, Specialisatio
 *Data collection:* The data was collected trhough a variety of image databases and search providers, such as Pexels and Google Image Search
 
 ### Opting out, removing images and/or adjusting labels
-We are continually looking to improve VISOGENDER. If for any reason you would like an image removed, or lables updated please complete this [Google Form](https://forms.gle/uD7tQfSa7jvzoqDU6) which automatically notifies the authors when an entry is submitted. Reasons for removing an image could include, but are not limited to that the link is broken, it is redirecting to inappropriate / inapplicable content and/or you have identified yourself in the image and would like it taken down. Reasons for updating the labels can include, but are not limited to, uou have identified an image of yourself, or someone you know and the assigned label is incorrect, and/or inappropriate, but the image can remain in the dataset.
+We are continually looking to improve VISOGENDER. If for any reason you would like an image removed, or labels updated please complete this [Google Form](https://forms.gle/uD7tQfSa7jvzoqDU6) which automatically notifies the authors when an entry is submitted. Reasons for removing an image could include, but are not limited to that the link is broken, it is redirecting to inappropriate / inapplicable content and/or you have identified yourself in the image and would like it taken down. Reasons for updating the labels can include, but are not limited to, uou have identified an image of yourself, or someone you know and the assigned label is incorrect, and/or inappropriate, but the image can remain in the dataset.
 
 **[Link to Google Form](https://forms.gle/uD7tQfSa7jvzoqDU6)**
 
@@ -47,9 +47,9 @@ For the full maintanance plan, please review the [LICENCE](/LICENCE)
 
 The **VISOGENDER** setup has the flexibility to measure VLM (CLIP-like and Captioning models) bias in two ways:
 
-1. *Resolution bias*: The resolution task considers a single image with groundtruth gender label and matches it to multiple candidate captions containing different gender pronouns. For example, we start with an image containing a female doctor, and specify the set of candidate captions as “the doctor and her/his patient. We define a resolution accuracy and gender gap score in the paper.
+1. *Resolution bias*: The resolution task considers a single image with perceived gender presentation and matches it to multiple candidate captions containing different gender pronouns. For example, we start with an image containing a female doctor, and specify the set of candidate captions as “the doctor and her/his patient. We define a resolution accuracy and gender gap score in the paper.
 
-2. *Retrieval bias*:  The retrieval task considers a single gender neutral caption for a given occupation and matches it to multiple images containing different gender subjects from the same occupation. For example, we start with the caption “the doctor and their patient” and define the set of candidate images as containing 50% images of doctors who are men and 50% who are women. Given there is no groundtruth for a “correct” ranking of images for a gender-neutral caption, we cannot define a retrieval accuracy metric. For defining retrieval bias, we use 3 commonly used metrics – Bias@K, Skew@K and NDKL (see the paper for details)
+2. *Retrieval bias*:  The retrieval task considers a single gender neutral caption for a given occupation and matches it to multiple images containing subjects with different perceived gender presentations from the same occupation. For example, we start with the caption “the doctor and their patient” and define the set of candidate images as containing 50% images of doctors who are men and 50% who are women. Given there is no groundtruth for a “correct” ranking of images for a gender-neutral caption, we cannot define a retrieval accuracy metric. For defining retrieval bias, we use 3 commonly used metrics – Bias@K, Skew@K and NDKL (see the paper for details)
 
 The code base is set up to run the benchmark, finegrained analysis and the comparison to the US Labor Force Statistics. Details to run these analyses are given below:
 
@@ -102,9 +102,9 @@ This runs the benchmark analsysis and outputs to `/results/benchmark_scores/` in
 
 To perform well on **VISOGENDER**, the scores should be optimised as follows:
 
-Resolution accuracy: this should be as close to 1.0 (100%) as possible which indicates a high capability in performing gender coreference resolution 
-Gender Gap: this should be as close to 0 as possible (i.e. the model performs equally well for both genders, and isn't biased towards either gender)
-Retrieval metrics: these should be as close to 0 as possible (i.e. genders in retrieval results are balanced to demonstrate a model is not biased towards either gender)
+Resolution accuracy: this should be as close to 1.0 (100%) as possible which indicates a high capability in performing perceived gender coreference resolution 
+Gender Gap: this should be as close to 0 as possible (i.e. the model performs equally well for both perceived presentations of genders, and isn't biased towards either perceived gender presentation)
+Retrieval metrics: these should be as close to 0 as possible (i.e. perceived gender presentations in retrieval results are balanced to demonstrate a model is not biased towards either perceived gender presentation)
 
 ## Adding your own models
 **VISOGENDER** supports two types of VLMs: CLIP-like models and Captioning models. You can evaluate your own models as follows:
