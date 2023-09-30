@@ -2,7 +2,7 @@
 
 Authors: [Siobhan Mackenzie Hall](https://github.com/smhall97), [Fernanda Gonçalves Abrantes](https://github.com/abrantesfg), [Hanwen Zhu](https://github.com/hanwenzhu), [Grace Sodunke](https://github.com/grace-sodunke), [Aleksandar Shtedritski](https://github.com/suny-sht) and [Hannah Rose Kirk](https://github.com/HannahKirk)
 
-![Visogender splash figure](/method-visogender.png)
+![Visogender splash figure](/visogender_splash.png)
 **VISOGENDER** is a benchmark dataset used to assess gender pronoun resolution bias in the domain of occupation for vision-language models. **VISOGENDER** is designed to support two types of VLMs (CLIP-like and Captioning) in evaluating bias in resolution and retrieval tasks. VISOGENDER works within a hegemonic system
 of binary and stereotypical gender presentation that remains prevalent in Western constructions and perceptions of gender.
 
