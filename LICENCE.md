@@ -1,4 +1,4 @@
-# Data Clause: Licence, Terms of Use
+# Data Clause: Licence, Terms of Use, Data Maintenance and Reporting Issues
 
 ## Terms of Use
 This dataset is solely intended for use as a benchmark for evaluating vision-language models under the constraints of the licence. This dataset is strictly not to be used for training under any circumstances.
