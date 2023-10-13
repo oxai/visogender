@@ -1,6 +1,7 @@
 import sys
 import pandas as pd
 import requests
+from src.definitions import OP_data_filepath, OO_data_filepath
 
 def test_url(url: str) -> str:
     """
@@ -82,8 +83,8 @@ def check_visogender_url_integrity(visogender_df: pd.DataFrame):
 
 if __name__ == "__main__":
 
-    OO_tsv_path = "data/visogender_data/OO/OO_Visogender_15082023.tsv"
-    OP_tsv_path = "data/visogender_data/OP/OP_Visogender_15082023.tsv"
+    OO_tsv_path = OO_data_filepath
+    OP_tsv_path = OP_data_filepath
 
     for tsv_file in [OO_tsv_path, OP_tsv_path]:
         print(f"Checking {tsv_file}")
