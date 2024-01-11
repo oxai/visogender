@@ -9,5 +9,5 @@ gender_idx_dict = {"masculine": 0, "feminine": 1, "neutral": 2}
 VISOGENDER DATA PATHS
 """
 
-OP_data_filepath = "/data/visogender_data/OP/OP_Visogender_02102023.tsv"
+OP_data_filepath = "/data/visogender_data/OP/OP_Visogender_11012024.tsv"
 OO_data_filepath = "/data/visogender_data/OO/OO_Visogender_02102023.tsv"
