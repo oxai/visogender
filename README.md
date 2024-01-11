@@ -26,6 +26,7 @@ There are two sets of image datasets:
 The dataset is made up of the following metadata headings: Sector, Specialisation and Occupation tags; URL; confirmation of licence; labels assigned to `occupation` as well as the `object` (single person) or the `participant` (two-person). The person responsible for collecting each instance is also indicated.
 
 *Date collected:* this data was collected between March and May 2023. 
+*Data updated:* October 2023, January 2024
 
 *Data collection:* The data was collected trhough a variety of image databases and search providers, such as Pexels and Google Image Search
 
