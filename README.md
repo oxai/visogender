@@ -21,7 +21,7 @@ There are two sets of image datasets:
   - [Link to dataset named OO_Visogender_17082023.tsv](data/visogender_data/OO/OO_Visogender_17082023.tsv) 
 - Two-persons: 
   - 460 images, divided into 23 occupations. Same pairs: M-M ; F-F | Diff. pairs: M-F ; F-M
-  - [Link to dataset named OP_Visogender_17082023.tsv](data/visogender_data/OP/OO_Visogender_17082023.tsv)
+  - [Link to dataset named OP_Visogender_11012024.tsv](data/visogender_data/OP/OO_Visogender_11012024.tsv)
 
 The dataset is made up of the following metadata headings: Sector, Specialisation and Occupation tags; URL; confirmation of licence; labels assigned to `occupation` as well as the `object` (single person) or the `participant` (two-person). The person responsible for collecting each instance is also indicated.
 
